@@ -1,0 +1,139 @@
+/* General body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+nav.bg-dark {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav a {
+    color: white !important;
+}
+
+/* Background image of the café */
+.bg-cafe {
+    background-image: url('./images/cafe-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding-top: 60px; /* Prevents overlap with navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+
+.bg-cafe h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* About Us Section */
+#about {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#about p {
+    font-size: 1.2rem;
+}
+
+/* Menu Section Styling */
+#menu {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 200%;
+    height: 250px; /* Set a fixed height for all images */
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* Branches Section */
+#branches {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.branch h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.branch p {
+    font-size: 1rem;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 50px 0;
+    background-color: #333;
+    color: white;
+}
+
+.carousel-inner .carousel-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonial-content {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly dark background */
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.testimonial-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-content footer {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+/* Contact Us Section */
+#contact {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#contact .form-label {
+    font-weight: bold;
+}
+
+#contact button {
+    width: 100%;
+}

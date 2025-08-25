@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Delight</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Café Delight</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#branches">Branches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Background Image Section -->
+    <div
+      class="bg-cafe"
+      style="
+        background-image: url('images/cafe-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        filter: brightness(0.8) contrast(1.2) saturate(1.2);
+      "
+    >
+      <div
+        class="bg-cafe-container d-flex justify-content-center align-items-center h-100"
+      >
+        <h1 class="welcome-text text-white text-center">
+          Welcome to Café Delight
+        </h1>
+      </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="container py-5">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p class="text-center">
+        Café Delight is a cozy café that serves the finest coffee, delicious
+        pastries, and mouthwatering sandwiches. We are committed to providing a
+        relaxing environment for our customers to unwind, work, or catch up with
+        friends.
+      </p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="container">
+      <h2 class="text-center mb-4">Our Menu</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/coffee.jpg"
+              class="card-img-top"
+              alt="A cup of cappuccino"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cappuccino</h5>
+              <p class="card-text">
+                A smooth blend of espresso and steamed milk, topped with foam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/pastry.jpg"
+              class="card-img-top"
+              alt="Freshly baked pastries"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Pastries</h5>
+              <p class="card-text">
+                Freshly baked pastries, perfect for pairing with your coffee.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="images/sandwich.jpg"
+              class="card-img-top"
+              alt="Sandwich"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sandwiches</h5>
+              <p class="card-text">
+                Delicious sandwiches made with fresh ingredients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="container py-5">
+      <h2 class="text-center mb-4">Our Branches</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="branch">
+            <h5>New York</h5>
+            <p>123 Main Street, New York, NY</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="branch">
+            <h5>Los Angeles</h5>
+            <p>456 Sunset Blvd, Los Angeles, CA</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="branch">
+            <h5>San Francisco</h5>
+            <p>789 Ocean Drive, San Francisco, CA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+      <div class="container text-center">
+        <h2>What Our Customers Say</h2>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-content">
+                <p>
+                  "The coffee here is simply amazing. It's the perfect place to
+                  catch up with friends!"
+                </p>
+                <footer class="blockquote-footer">John Doe</footer>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-content">
+                <p>
+                  "Great ambiance and delicious pastries. I love spending my
+                  weekends here."
+                </p>
+                <footer class="blockquote-footer">Jane Smith</footer>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-content">
+                <p>"Best café in town! Their sandwiches are to die for."</p>
+                <footer class="blockquote-footer">Chris Johnson</footer>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="container py-5">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Your Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Your Email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="4"
+            placeholder="Your Message"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
