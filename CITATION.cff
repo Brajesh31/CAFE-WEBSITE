@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use or adapt this project, please cite it as below."
+title: "Café Delight Website"
+type: software
+authors:
+  - family-names: Kumar
+    given-names: Brajesh
+repository-code: "https://github.com/Brajesh31/CAFE-WEBSITE"
+url: "https://github.com/Brajesh31/CAFE-WEBSITE"
+license: MIT
+keywords:
+  - static website
+  - HTML
+  - CSS
+  - café
