@@ -1,0 +1,13 @@
+title: "❓ Project question"
+body:
+  - type: textarea
+    attributes:
+      label: What are you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What have you tried?
+  - type: input
+    attributes:
+      label: Browser and environment, if relevant
