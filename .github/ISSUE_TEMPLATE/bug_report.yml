@@ -1,0 +1,32 @@
+name: "🐞 Bug report"
+description: Report a reproducible problem in the static website.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is broken?
+      description: Describe the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+    validations:
+      required: true
+  - type: input
+    id: viewport
+    attributes:
+      label: Screen size or device
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Console errors, network failures, or screenshots
