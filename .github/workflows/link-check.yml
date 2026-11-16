@@ -1,0 +1,27 @@
+name: "🔗 Documentation link check"
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate local Markdown links
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          failed=[]
+          files=[Path('README.md'),*Path('docs').rglob('*.md'),*Path('.').glob('*.md')]
+          for source in files:
+              for raw in re.findall(r'(?<!!)\\[[^]]+\\]\\(([^)]+)\\)',source.read_text(encoding='utf-8')):
+                  target=raw.split('#',1)[0]
+                  if not target or '://' in target or target.startswith('mailto:'): continue
+                  if not (source.parent/target).resolve().exists(): failed.append(f'{source}: {raw}')
+          if failed: print('\\n'.join(failed)); raise SystemExit(1)
+          print('Local Markdown links resolved.')
+          PY
