@@ -1,10 +1,25 @@
-# Changelog
+# 📋 Changelog
 
-This file records notable repository changes. The original page snapshot has no reliable release date recorded here.
+Notable changes are recorded here. Dates describe repository commits, not necessarily the original page's creation.
 
 ## Unreleased
 
-- Added project-specific setup, architecture, API, deployment, and contributor documentation.
-- Documented the stylesheet link mismatch, unloaded JavaScript file, case-sensitive image path mismatch, and nonfunctional contact form.
-- Clarified that the page is a static visual prototype and does not collect or send form data.
-- Added repository metadata and an MIT license for original project code and documentation.
+### Added
+- Detailed project README and documentation index.
+- Architecture, page-flow, and content-review SVG diagrams.
+- Guidance for accessibility, content verification, privacy, security, SEO, performance, testing, and maintenance.
+- Reusable decision, change, content approval, test, and release templates.
+- GitHub issue, pull-request, and discussion templates.
+- Static resource validation workflow.
+
+### Changed
+- Corrected stylesheet and coffee image paths.
+- Loaded the local navigation enhancement.
+- Reworked responsive styling, menu image sizing, focus visibility, and reduced-motion behavior.
+- Marked the contact form as a non-submitting demonstration and disabled its submit control.
+
+### Known limitations
+- Bootstrap CDN remains pinned to an alpha release.
+- Branch details, testimonials, and bundled image licensing need owner verification.
+- No real contact receiver, backend, database, ordering, or booking feature exists.
+- Browser automation and cross-browser audit are not configured.

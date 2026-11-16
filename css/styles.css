@@ -1,139 +1,85 @@
-/* General body styles */
+/* Café Delight responsive presentation */
+:root {
+  color-scheme: light;
+  --cafe-ink: #24201d;
+  --cafe-paper: #fffdf9;
+  --cafe-muted: #f4eee7;
+  --cafe-coffee: #6f432b;
+  --cafe-accent: #c58b52;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  padding-top: 56px;
+  color: var(--cafe-ink);
+  background: var(--cafe-paper);
+  font-family: "Roboto", Arial, sans-serif;
 }
-
-/* Navbar Styling */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
+.skip-link {
+  position: absolute; left: 1rem; top: -5rem; z-index: 2000;
+  padding: .75rem 1rem; background: #fff; color: #111;
+  border: 2px solid var(--cafe-coffee); border-radius: .35rem;
 }
-nav.bg-dark {
-    background-color: rgba(0, 0, 0, 0.7);
+.skip-link:focus { top: 1rem; }
+nav { z-index: 1030; }
+nav.bg-dark { background-color: rgba(25, 22, 20, .96) !important; }
+nav a { color: #fff !important; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--cafe-accent);
+  outline-offset: 3px;
 }
-
-nav a {
-    color: white !important;
-}
-
-/* Background image of the café */
 .bg-cafe {
-    background-image: url('./images/cafe-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding-top: 60px; /* Prevents overlap with navbar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
+  min-height: min(78vh, 760px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 3rem 1rem;
+  background-image: linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.48)), url("../images/cafe-bg.jpg");
+  background-size: cover; background-position: center;
+  text-align: center;
 }
-
 .bg-cafe h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-weight: bold;
+  max-width: 18ch; margin: 0 auto; color: #fff;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 1.1; font-weight: 700; text-transform: uppercase;
+  text-shadow: 0 2px 16px rgba(0,0,0,.45);
 }
-
-/* About Us Section */
-#about {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
-#about p {
-    font-size: 1.2rem;
-}
-
-/* Menu Section Styling */
-#menu {
-    background-color: #f8f9fa;
-    padding: 100px 0;
-}
-
+section[id] { scroll-margin-top: 5rem; }
+#about, #contact { background: #fff; padding: 3.5rem 0; }
+#about p { max-width: 70ch; margin-inline: auto; font-size: 1.1rem; line-height: 1.75; }
+#menu { padding: 4rem 0; background: var(--cafe-muted); }
 .card {
-    border: none;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: 100%; overflow: hidden; border: 0; border-radius: .8rem;
+  box-shadow: 0 5px 20px rgba(40, 25, 15, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-
-.card img {
-    width: 200%;
-    height: 250px; /* Set a fixed height for all images */
-    object-fit: cover;
-}
-
-.card:hover {
-    transform: scale(1.1);
-}
-
-/* Branches Section */
-#branches {
-    padding: 50px 0;
-    background-color: #f0f0f0;
-}
-
-.branch h5 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.branch p {
-    font-size: 1rem;
-}
-
-/* Testimonials Section */
-#testimonials {
-    padding: 50px 0;
-    background-color: #333;
-    color: white;
-}
-
-.carousel-inner .carousel-item {
-    text-align: center;
-    padding: 2rem;
-}
-
+.card img { display: block; width: 100%; height: 230px; object-fit: cover; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(40,25,15,.14); }
+.card .card-body { width: 100%; }
+#branches { padding: 3.5rem 0; background: #f8f5f1; }
+.branch { height: 100%; padding: 1.25rem; border-left: 3px solid var(--cafe-accent); background: #fff; }
+.branch h5 { margin-bottom: .5rem; font-size: 1.25rem; }
+.branch p { margin: 0; }
+#testimonials { padding: 3.5rem 0; background: #302923; color: #fff; }
+.carousel-inner .carousel-item { padding: 2rem; text-align: center; }
 .testimonial-content {
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly dark background */
-    border-radius: 10px;
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 760px; margin: 0 auto; padding: 1.5rem;
+  background: rgba(0,0,0,.28); border-radius: .75rem;
 }
-
-.testimonial-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    font-style: italic;
+.testimonial-content p { font-size: 1.15rem; line-height: 1.7; font-style: italic; }
+.testimonial-content footer { color: #f5dfc8; font-weight: 600; }
+#contact { max-width: none; }
+#contact form { max-width: 760px; margin: 0 auto; }
+#contact .form-label { font-weight: 600; }
+#contact button { width: 100%; }
+.form-notice { max-width: 760px; margin: 0 auto 1rem; padding: .85rem 1rem; background: #fff3cd; border-left: 4px solid #a66a00; }
+.site-footer { color: #f8f5f1; background: #211c18; }
+@media (max-width: 575.98px) {
+  body { padding-top: 56px; }
+  .bg-cafe { min-height: 62vh; }
+  .carousel-inner .carousel-item { padding: 1rem .5rem; }
+  .testimonial-content { padding: 1.1rem; }
 }
-
-.testimonial-content footer {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #f0f0f0;
-}
-
-/* Contact Us Section */
-#contact {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
-#contact .form-label {
-    font-weight: bold;
-}
-
-#contact button {
-    width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }

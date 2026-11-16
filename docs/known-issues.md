@@ -1,25 +1,26 @@
 # 🐞 Known Issues and Implementation Gaps
 
-Findings are based on source inspection, not a full cross-browser test.
+This register reflects source inspection after the current website cleanup. It is not a browser audit.
 
-| ID | Priority | Finding | Impact | Recommended action |
+| ID | Priority | Status | Finding | Next action |
 |---|---|---|---|---|
-| CAFE-001 | High | HTML links `styles.css`; file is `css/styles.css` | Custom CSS may not load | Correct stylesheet href |
-| CAFE-002 | High | HTML requests `images/coffee.jpg`; tracked file is `images/Coffee.jpg` | Fails on case-sensitive hosts | Match exact case |
-| CAFE-003 | Medium | `js/script.js` is not loaded | Smooth-scroll handler does not run | Link script or remove unused code |
-| CAFE-004 | Medium | Menu images have `width: 200%` | Card overflow | Constrain to 100% |
-| CAFE-005 | High | Contact form has no action/method/named fields/handler | Messages are not delivered | Add a secure receiver before advertising the form |
-| CAFE-006 | Medium | Bootstrap 5.3.0-alpha1 | Alpha dependency may be unsuitable for production | Upgrade and test stable version |
-| CAFE-007 | Medium | Branch/testimonial details are sample content | Potentially misleading | Verify or replace |
-| CAFE-008 | Low | `image.png` is unreferenced | Unclear asset purpose | Retain with explanation or remove only after owner review |
-| CAFE-009 | Medium | Hero rules duplicated inline and in CSS | Maintenance complexity | Consolidate styles |
+| CAFE-001 | High | Fixed | Stylesheet href pointed to the wrong directory | Updated to css/styles.css |
+| CAFE-002 | High | Fixed | Coffee image used incorrect filename case | Updated to images/Coffee.jpg |
+| CAFE-003 | Medium | Fixed | Local navigation script was not loaded | Added deferred script reference |
+| CAFE-004 | Medium | Fixed | Menu images used 200% width | Constrained images to card width |
+| CAFE-005 | High | Mitigated | Contact form looked functional but had no receiver | Added explicit demo notice and disabled submit |
+| CAFE-006 | Medium | Open | Bootstrap 5.3.0-alpha1 is an alpha dependency | Upgrade and regression-test stable release |
+| CAFE-007 | Medium | Open | Branch and testimonial content is unverified sample copy | Obtain owner approval or replace |
+| CAFE-008 | Medium | Open | Image asset provenance and licenses are not recorded | Verify source and usage rights |
+| CAFE-009 | Low | Improved | Hero styles were duplicated inline and in CSS | Consolidated hero presentation in stylesheet |
 
-## Fix order
-1. Fix stylesheet and image references.
-2. Decide whether to load the local script.
-3. Fix image sizing and mobile overflow.
-4. Define contact requirements before implementing.
-5. Review Bootstrap version and asset rights.
-6. Verify all public-facing sample content.
+## Verification still required
 
-Update this register only when a fix is committed and verified.
+- [ ] Run the page in current Chrome, Firefox, and Safari.
+- [ ] Test 320px, 375px, 768px, 1024px, and desktop widths.
+- [ ] Confirm carousel and collapsed navbar behavior.
+- [ ] Run keyboard-only navigation and screen-reader spot checks.
+- [ ] Confirm image licenses and content accuracy.
+- [ ] Test static deployment on a case-sensitive host.
+
+A source-level fix is not proof of a successful cross-browser test.
