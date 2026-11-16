@@ -1,0 +1,13 @@
+title: "💡 Ideas and improvements"
+body:
+  - type: textarea
+    attributes:
+      label: What problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed direction
+  - type: textarea
+    attributes:
+      label: Accessibility, content, and privacy considerations
