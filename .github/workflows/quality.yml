@@ -1,0 +1,38 @@
+name: "🧪 Static site quality checks"
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local asset references
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse
+          class Refs(HTMLParser):
+              def __init__(self): super().__init__(); self.paths=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for k in ('src','href'):
+                      v=d.get(k,'')
+                      if not v or v.startswith(('#','http://','https://','mailto:','tel:','data:')): continue
+                      if k=='href' and tag=='a': continue
+                      p=urlparse(v).path
+                      if p: self.paths.append(p)
+          parser=Refs(); parser.feed(Path('index.html').read_text(encoding='utf-8'))
+          missing=[p for p in parser.paths if not Path(p).exists()]
+          if missing: raise SystemExit('Missing local resources: '+', '.join(missing))
+          print(f'Checked {len(parser.paths)} local resource references.')
+          PY
+      - name: Check whitespace
+        run: git diff --check
